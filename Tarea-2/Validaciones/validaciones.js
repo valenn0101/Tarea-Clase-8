@@ -17,5 +17,15 @@ function validarFormularioSalarios(){
         $salarios[integrantes[i].id] = integrantes[i];
       }
     }
-    console.log($salarios);
+    evaluarSalarios($salarios);
+  }
+
+function evaluarSalarios($salarios) {
+  for (const id in $salarios) {
+    const element = $salarios[id];
+    const value = element.value;
+    if (value >= 3000) {
+      element.classList.add("error");
+    }
+  }
 }

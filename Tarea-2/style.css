@@ -1,3 +1,6 @@
 .ocultar{
     display: none;
 }
+.error, #error {
+    border: 2px solid red;
+}
