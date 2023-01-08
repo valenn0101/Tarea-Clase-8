@@ -25,7 +25,7 @@ $botonAgregar.onclick = function crearFormularios() {
   formularios.innerHTML += `<form id="integrante" class="familia">
     <h3>Familiar</h3>
     <label for="salario-anual-familiares">Salario Anual</label>
-    <input type="number" name="Salario" class="salarios" id="salario${i}" required>
+    <input name="Salario" class="salarios" id="salario${i}" required>
     </form> <br/>`;
 };
 
@@ -37,6 +37,9 @@ $botonQuitar.onclick = function borrarFormulario() {
 
 $botonCalcular.onclick = function () {
   validarFormularioSalarios();
+  if(hayError === true){
+    return;
+  }
 
   const numeros = obtenerSalarios();
   mostrarSalario("mayor", obtenerMayorSalario(numeros));
