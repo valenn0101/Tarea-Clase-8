@@ -1,15 +1,15 @@
-function obtenerMayorSalario(numeros) {
-  let mayorNumero = numeros[0];
+function obtenerSalarioMayor(numeros) {
+  let numeroMayor = numeros[0];
   for (let i = 1; i < numeros.length; i++) {
-    if (numeros[i] > mayorNumero) {
-      mayorNumero = numeros[i];
+    if (numeros[i] > numeroMayor) {
+      numeroMayor = numeros[i];
     }
   }
 
-  return mayorNumero;
+  return numeroMayor;
 }
 
-function obtenerMenorSalario(numeros) {
+function obtenerSalarioMenor(numeros) {
   let menorNumero = numeros[0];
   for (let i = 1; i < numeros.length; i++) {
     if (numeros[i] < menorNumero) {

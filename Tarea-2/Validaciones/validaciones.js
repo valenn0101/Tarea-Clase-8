@@ -1,11 +1,11 @@
-function validarSalarios(value){
-    if("" === value){
+function validarSalarios(salarios){
+    if("" === salarios){
         return "El campo salarios no puede estar vacio"
     }
-    if(/[^a-zA-Z0-9,.]/.test(value)){
+    if(/[^a-zA-Z0-9,.]/.test(salarios)){
         return "El campo salarios no acepta caracteres especiales que no son ',' ni '.' ni números"
     }
-    if (/[a-zA-Z]/.test(value)) {
+    if (/[a-zA-Z]/.test(salarios)) {
       return "El campo salarios solo acepta números";
   }
     return "";
@@ -29,11 +29,11 @@ function evaluarSalarios($salarios) {
   const $errores = document.getElementById("errores")
   $errores.innerText = "";
   for (const id in $salarios) {
-    const element = $salarios[id];
-    const value = element.value;
-    const validacion = validarSalarios(value);
+    const salario = $salarios[id];
+    const valorSalario = salario.value;
+    const validacion = validarSalarios(valorSalario);
     if (validacion !== "") {
-      element.classList.add("error");
+      salario.classList.add("error");
       hayError = true;
 
       const $error = document.createElement("li");

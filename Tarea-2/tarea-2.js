@@ -10,43 +10,45 @@ const $botonAgregar = document.getElementById("agregar-familiar");
 const $botonQuitar = document.getElementById("quitar-familiar");
 const $botonCalcular = document.getElementById("calcular-sueldos");
 
-function mostrarBotonCalcular() {
+function mostrarBotones() {
   document.getElementById("calcular-sueldos").className = " ";
-}
-
-function mostrarBotonResultados() {
   document.getElementById("resultados-finales").className = " ";
+}
+function ocultarResultados(){
+  document.getElementById("resultados-finales").className = "ocultar";
 }
 let i = 0;
 $botonAgregar.onclick = function crearFormularios() {
   i++;
-  mostrarBotonCalcular();
+  mostrarBotones();
   const formularios = document.getElementById("lista-de-familiares");
-  formularios.innerHTML += `<form id="integrante" class="familia">
-    <h3>Familiar</h3>
+  formularios.innerHTML += `
+    <h3>Familiar ${i}</h3>
     <label for="salario-anual-familiares">Salario Anual</label>
     <input name="Salario" class="salarios" id="salario${i}" required>
-    </form> <br/>`;
+   <br/>`;
 };
 
 $botonQuitar.onclick = function borrarFormulario() {
-  const $listaFamiliares = document.getElementById("lista-de-familiares");
-  const formularioHijo = $listaFamiliares.lastElementChild;
-  $listaFamiliares.removeChild(formularioHijo);
+  const $familiares = document.getElementById("contenedor-formularios");
+  const formularioHijo = $familiares.lastElementChild;
+  $familiares.removeChild(formularioHijo);
 };
 
 $botonCalcular.onclick = function () {
   validarFormularioSalarios();
-  if(hayError === true){
+  if(hayError){
+    ocultarResultados();
     return;
   }
 
   const numeros = obtenerSalarios();
-  mostrarSalario("mayor", obtenerMayorSalario(numeros));
-  mostrarSalario("menor", obtenerMenorSalario(numeros));
-  mostrarSalario("mensualidad", obtenerPromedioAnual(numeros) / 12);
+  const mesesDelAño = 12;
+  mostrarSalario("mayor", obtenerSalarioMayor(numeros));
+  mostrarSalario("menor", obtenerSalarioMenor(numeros));
+  mostrarSalario("mensualidad", obtenerPromedioAnual(numeros) / mesesDelAño);
   mostrarSalario("promedio", obtenerPromedioAnual(numeros));
-  mostrarBotonResultados();
+  mostrarBotones();
 };
 
 function obtenerSalarios() {
