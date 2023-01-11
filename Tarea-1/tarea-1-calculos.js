@@ -1,4 +1,4 @@
-function mostrarMayor($edades) {
+function mostrarMayorEdad($edades) {
   let mayorNumero = $edades[0];
   for (let i = 1; i < $edades.length; i++) {
     if ($edades[i] > mayorNumero) {
@@ -9,7 +9,7 @@ function mostrarMayor($edades) {
   return mayorNumero;
 }
 
-function mostrarMenor($edades) {
+function mostrarMenorEdad($edades) {
   let menorNumero = $edades[0];
   for (let i = 1; i < $edades.length; i++) {
     if ($edades[i] < menorNumero) {
@@ -20,7 +20,7 @@ function mostrarMenor($edades) {
   return menorNumero;
 }
 
-function calcularPromedio($edades) {
+function calcularPromedioEdades($edades) {
   let acumulador = 0;
   for (let i = 0; i < $edades.length; i++) {
     acumulador += $edades[i];

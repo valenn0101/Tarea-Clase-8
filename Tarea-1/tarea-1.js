@@ -23,7 +23,7 @@ function cambiarBotonResultados(mostrar) {
 
 $botonEnviar.onclick = function () {
   validarFormularioIntegrantes(integrantes);
-  if (hayError === true) {
+  if (hayError) {
     return;
   }
   cambiarBotonCalcular(true);
@@ -51,27 +51,27 @@ function crearFormularios(numeroDeIngregantes) {
 }
 
 function borrarEdades() {
-  const $integrantes = document.querySelectorAll(".familia");
-  for (let i = 0; i < $integrantes.length; i++) {
-    $integrantes[i].remove();
+  const integrantes = document.querySelectorAll(".familia");
+  for (let i = 0; i < integrantes.length; i++) {
+    integrantes[i].remove();
   }
 }
 
-function borrarErrores(){
-  const $errores = document.querySelector("#errores");
-  $errores.innerHTML = "";
+function borrarErrores() {
+  const listadoErrores = document.querySelector("#errores");
+  listadoErrores.innerHTML = "";
 }
 
 $botonCalcular.onclick = function () {
   const $edades = obtenerEdades();
   edadesErrores();
-  if (hayError == true) {
-    cambiarBotonResultados(false)
+  if (hayError) {
+    cambiarBotonResultados(false);
     return;
   }
-  mostrarEdad("mayor", mostrarMayor($edades));
-  mostrarEdad("menor", mostrarMenor($edades));
-  mostrarEdad("promedio", calcularPromedio($edades));
+  mostrarEdad("mayor", mostrarMayorEdad($edades));
+  mostrarEdad("menor", mostrarMenorEdad($edades));
+  mostrarEdad("promedio", calcularPromedioEdades($edades));
   cambiarBotonResultados(true);
 };
 
