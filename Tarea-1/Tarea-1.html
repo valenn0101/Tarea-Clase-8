@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarea 1 Clase 6</title>
+    <link rel="stylesheet" href="/Tarea-1/style.css" />
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <form method="post" name="formulario" id="calcular-edades" onsubmit="return false" >
+      <div class="container mt-4 d-flex align-items-center justify-content-center">
+        <div class="row g-2">
+          <div class="col-6">
+            <label class="border border-2 border-primary rounded-pill" for="cantidad-integrantes">Ingrese la cantidad de familiares que tienes</label>
+          </div>
+          <div class="col-6">
+            <input class="rounded-pill" type="number" id="cantidad-integrantes" name="cantidad-integrantes"/>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-primary" type="submit" id="primer-paso">Enviar</button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-warning" id="reiniciar">Reiniciar</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+    <div class="m-4" id="formularios"></div>
+    <button class="ocultar" type="button" id="segundo-paso" class="ocultar">Calcular</button>
+    <div class="conclusion">
+      <div id="errores"></div>
+      <div id="resultados" class="ocultar div2 border border-success">
+      <p>El mayor es: <strong id="mayor-edad"></strong></p>
+      <p>La menor es: <strong id="menor-edad"></strong></p>
+      <p>El promedio de edad es: <strong id="promedio-edad"></strong></p>
+    </div>
+  </div>
+    <script type="text/javascript" src="/Tarea-1/tarea-1-calculos.js"></script>
+    <script type="text/javascript" src="/Tarea-1/tarea-1.js"></script>
+    <script type="text/javascript" src="/Tarea-1/Validaciones/validaciones.js"></script>
+    <script type="text/javascript" src="/Tarea-1/Validaciones/pruebas.js"></script>
+  </body>
+</html>
