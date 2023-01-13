@@ -47,14 +47,16 @@ function manejarErroresIntegrantes(errores) {
 
   Object.values(errores).forEach((error) => {
     if (error) {
-      listadoIntegrantes.className = "error";
+      listadoIntegrantes.classList.add("error");
       hayError = true;
 
+      $errores.classList.add("alert");
+      $errores.classList.add("alert-danger");      
       const $error = document.createElement("li");
       $error.innerText = error;
       $errores.appendChild($error);
     } else {
-      listadoIntegrantes.className = "";
+      listadoIntegrantes.classList.remove("error");
       hayError = false;
     }
   });
@@ -73,6 +75,8 @@ function edadesErrores() {
     if (mensajeError) {
       integrantes[i].id = "error";
       const li = document.createElement("li");
+      $errores.classList.add("alert");
+      $errores.classList.add("alert-danger");   
       li.textContent = mensajeError;
       $errores.appendChild(li);
       hayError = true;

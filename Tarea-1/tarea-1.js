@@ -7,7 +7,7 @@ const $botonReiniciar = document.getElementById("reiniciar");
 
 function cambiarBotonCalcular(mostrar) {
   if (mostrar) {
-    document.getElementById("segundo-paso").className = "";
+    document.getElementById("segundo-paso").className = "btn btn-success m-4";
   } else {
     document.getElementById("segundo-paso").className = "ocultar";
   }
@@ -15,7 +15,7 @@ function cambiarBotonCalcular(mostrar) {
 
 function cambiarBotonResultados(mostrar) {
   if (mostrar) {
-    document.getElementById("resultados").className = " ";
+    document.getElementById("resultados").className = "alert alert-success";
   } else {
     document.getElementById("resultados").className = "ocultar";
   }
@@ -42,11 +42,11 @@ function crearFormularios(numeroDeIngregantes) {
   const $formularios = document.getElementById("formularios");
   $formularios.innerHTML = " ";
   for (let i = 1; i <= numeroDeIngregantes; i++) {
-    $formularios.innerHTML += `<form id="integrante-${i}" class="familia">
-          <h3>Familiar Numero ${i}</h3>
+    $formularios.innerHTML += `<div class="border border-1 col-4"> <form id="integrante-${i}" class="familia">
+          <p>Familiar Numero ${i}</p>
           <label for="edad-familiares">Edad</label>
           <input type="number" name="Edad" class="familiares" id="" required>
-          </form> <br/>`;
+          </form> <div/> <br/>`;
   }
 }
 
