@@ -11,8 +11,8 @@ const $botonQuitar = document.getElementById("quitar-familiar");
 const $botonCalcular = document.getElementById("calcular-sueldos");
 
 function mostrarBotones() {
-  document.getElementById("calcular-sueldos").className = " ";
-  document.getElementById("resultados-finales").className = " ";
+  document.getElementById("calcular-sueldos").className = "btn btn-success m-4";
+  document.getElementById("resultados-finales").className = "m-4 border border-2 border-success";
 }
 function ocultarResultados(){
   document.getElementById("resultados-finales").className = "ocultar";

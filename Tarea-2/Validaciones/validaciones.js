@@ -35,7 +35,10 @@ function evaluarSalarios($salarios) {
     if (validacion !== "") {
       salario.classList.add("error");
       hayError = true;
-
+      $errores.classList.add("m-4")
+      $errores.classList.add("border")
+      $errores.classList.add("border-2")
+      $errores.classList.add("border-danger")
       const $error = document.createElement("li");
       $error.innerText = validacion;
       $errores.appendChild($error);
